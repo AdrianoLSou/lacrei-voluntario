@@ -1,10 +1,10 @@
-import Conection from "./Conection";
-import "dotenv/config";
+import Connection from "./Connection";
+import ENV from "../infra/config/env";
 
-const mySqlConection = new Conection("", "root", "", {
+const mySqlConnection = new Connection(ENV.DB_NAME, ENV.DB_USER, ENV.DB_PASS, {
   dialect: "mysql",
-  port: 3306,
-  host: "localhost",
+  port: ENV.DB_PORT,
+  host: ENV.DB_HOST,
 });
 
-export { mySqlConection };
+export { mySqlConnection };
