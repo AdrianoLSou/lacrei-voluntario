@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import IRepository from "../repositories/IRepository";
-import { preCadastroUseCase } from "../useCases/";
-import PreCadastroUseCase from "../useCases/pre-cadastro"
+import IRepository from "../../../repositories/IRepository";
+import { preCadastroUseCase } from "../useCases";
+import PreCadastroUseCase from "../useCases/PreCadastro"
 
 export default class PreCadastro {
 

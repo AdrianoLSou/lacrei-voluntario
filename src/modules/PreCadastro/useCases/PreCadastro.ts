@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import IRepository from "../../repositories/IRepository";
+import IRepository from "../../../repositories/IRepository";
 
 export default class PreCadastroUseCase {
   private repository: IRepository;
@@ -10,7 +10,6 @@ export default class PreCadastroUseCase {
 
 
   async listarTodos() {
-
     const lista = this.repository.findAll();
     return lista;
   }

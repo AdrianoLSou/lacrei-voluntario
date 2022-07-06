@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
-import { listaEspera } from "../models"
+import { listaEspera } from "../../../models"
 
 export const add = (req: Request, res: Response) => {
+
   const { email, profissao } = req.body;
 
   const newL = new listaEspera.instance({
