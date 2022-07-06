@@ -1,7 +1,8 @@
 import Express, { Application } from "express";
 import { mySqlConnection } from "../database";
 
-import BaseRoutes from "./BaseRoutes";
+import routes from "../routes";
+//import BaseRoutes from "./BaseRoutes";
 
 type SetupOptions = {
   isTest?: boolean;
@@ -18,7 +19,8 @@ export default class App {
   async setup(options: SetupOptions): Promise<void> {
     const selectedPort = options.port ? options.port : this.defaultPort;
     this.instance.use(Express.json());
-    this.instance.use(BaseRoutes);
+    this.instance.use(routes);
+    //this.instance.use(BaseRoutes);
 
     mySqlConnection.hasConection();
 
