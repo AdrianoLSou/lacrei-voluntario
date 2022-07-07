@@ -1,20 +1,22 @@
 import { Request, Response } from "express";
-import { listaEspera } from "../../../models"
+import PROFISSOES from "../../../constants/profissoes";
+import { listaEspera } from "../../../models";
 
-export const add = (req: Request, res: Response) => {
+export const cadastrar = async (req: Request, res: Response) => {
 
   const { email, profissao } = req.body;
 
-  const newL = new listaEspera.instance({
+  if(!PROFISSOES.includes(profissao)) {
+    return res.status(400).json({ error: "Sua profissao não é permitida" });
+  }
+
+  const novoCadastro = new listaEspera.instance({
     email: email,
     profissao: profissao
-  })
+  });
 
-  console.log(email, profissao);
+  novoCadastro.save();
 
-
-  newL.save();
-
-  return res.status(200).json(newL);
+  return res.status(200).json(novoCadastro);
 }
 
