@@ -10,12 +10,10 @@ export const cadastrar = async (req: Request, res: Response) => {
     return res.status(400).json({ error: "Sua profissao não é permitida" });
   }
 
-  const novoCadastro = new listaEspera.instance({
+  const novoCadastro = await listaEspera.instance.create({
     email: email,
     profissao: profissao
   });
-
-  novoCadastro.save();
 
   return res.status(200).json(novoCadastro);
 }
