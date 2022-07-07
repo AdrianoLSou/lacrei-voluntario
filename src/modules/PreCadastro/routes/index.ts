@@ -1,8 +1,10 @@
 import { Router } from "express";
-import { preCadastroController } from "../controller";
+import * as preCadastroController  from "../controller/PreCadastro";
+import preCadastroValidator from "../validators/index";
 
 const routes = Router();
 
-routes.get("/pre-cadastro", preCadastroController.findAll);
+routes.get("/lista-pendentes", preCadastroController.listarPendentes);
+routes.post("/pre-cadastro", preCadastroValidator, preCadastroController.cadastrar);
 
 export default routes;
