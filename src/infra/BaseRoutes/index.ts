@@ -1,11 +1,11 @@
 import { Router } from "express";
 
 import routesListaDeEspera from "../../modules/listaDeEspera/routes";
-import routesPreCadastro from "../../modules/listaDeEspera/routes";
+import routesPreCadastro from "../../modules/PreCadastro/routes";
 
 const routes = Router();
 
-routes.use("/lista-de-espera", routesListaDeEspera);
-routes.use("/pre-cadastro", routesPreCadastro);
+routes.use(routesListaDeEspera);
+routes.use(routesPreCadastro);
 
 export default routes;
