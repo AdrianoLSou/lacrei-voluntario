@@ -22,8 +22,9 @@ export default {
         allowNull: false,
       },
       registro: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(255),
         allowNull: false,
+        unique: true
       },
       senha: {
         type: DataTypes.STRING(300),
@@ -31,7 +32,7 @@ export default {
       },
       aprovado: {
         type: DataTypes.BOOLEAN,
-        allowNull: false,
+        allowNull: true,
       },
       dadosPessoais_id: {
         type: DataTypes.INTEGER,
