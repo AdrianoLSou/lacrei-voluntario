@@ -1,4 +1,5 @@
 import Express, { Application } from "express";
+import cors from "cors";
 import { mySqlConnection } from "../database";
 
 import handleError from "../middlewares/handleError";
@@ -18,6 +19,7 @@ export default class App {
 
   async setup(options: SetupOptions): Promise<void> {
     const selectedPort = options.port ? options.port : this.defaultPort;
+    this.instance.use(cors());
     this.instance.use(Express.json());
     this.instance.use(BaseRoutes);
     this.instance.use(handleError);
