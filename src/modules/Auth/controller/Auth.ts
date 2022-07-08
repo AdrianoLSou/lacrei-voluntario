@@ -18,6 +18,10 @@ export const logar = async (req: Request, res: Response) => {
     return res.status(401).json("Credenciais invalidas");
   }
 
+  if(hasUser.aprovado == false) {
+    return res.status(401).json("Seu cadastro foi recusado!");
+  }
+
   const token = jwt.sign({
     id: hasUser.id,
     email: hasUser.email,
