@@ -1,6 +1,4 @@
 import { Request, Response } from "express";
-import multer from "multer";
-import { uuid } from 'uuidv4';
 import jwt from "jsonwebtoken";
 
 interface MulterPayload {
