@@ -2,7 +2,7 @@ import { Router } from "express";
 import authMiddleware from "../../../middlewares/Auth";
 import * as CadastroController from "../controller/Cadastro";
 import multer from "multer";
-const { uuid } = require('uuidv4')
+import { v4 as uuid } from 'uuid';
 
 const upload = multer({
   storage: multer.diskStorage({
