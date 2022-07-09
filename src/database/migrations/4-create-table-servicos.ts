@@ -10,11 +10,11 @@ export default {
       },
       nome: {
         type: DataTypes.STRING(255),
-        allowNull: false,
+        allowNull: true,
       },
       duracao: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       valor: {
         type: DataTypes.DOUBLE,
@@ -22,7 +22,7 @@ export default {
       },
       tipoConsulta: {
         type: DataTypes.STRING(255),
-        allowNull: false,
+        allowNull: true,
       },
       createdAt: {
         type: DataTypes.DATE(),

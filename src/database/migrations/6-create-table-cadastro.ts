@@ -36,19 +36,23 @@ export default {
       },
       dadosPessoais_id: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false
       },
       dadosProfissionais_id: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false
       },
       consultorio_id: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false
       },
       servicos_id: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false
+      },
+      situacao_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
       },
       createdAt: {
         type: DataTypes.DATE(),

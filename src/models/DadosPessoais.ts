@@ -18,15 +18,15 @@ export class DadosPessoais {
         },
         foto: {
           type: DataTypes.STRING(255),
-          allowNull: false,
+          allowNull: true,
         },
         fotoDescricao: {
           type: DataTypes.STRING(255),
-          allowNull: false,
+          allowNull: true,
         },
         sobre: {
           type: DataTypes.STRING(300),
-          allowNull: false,
+          allowNull: true,
         },
         createdAt: {
           type: DataTypes.DATE(),

@@ -4,17 +4,17 @@ import { DadosPessoais } from "./DadosPessoais";
 import { Cadastro } from "./Cadastro";
 import { Consultorio } from "./Consultorio";
 import { DadosProfissionais } from "./DadosProfissionais";
-import { Enderecos } from "./Endereco";
 import { ListaEspera } from "./ListaEspera";
 import { Servicos } from "./Servicos";
+import { Situacao } from "./Situacao";
 
 const dadosPessoais = new DadosPessoais(mySqlConnection);
 const dadosProfissionais = new DadosProfissionais(mySqlConnection);
-const enderecos = new Enderecos(mySqlConnection);
 const servicos = new Servicos(mySqlConnection);
 const consultorio = new Consultorio(mySqlConnection);
 const cadastro = new Cadastro(mySqlConnection);
 const listaEspera = new ListaEspera(mySqlConnection);
+const situacao = new Situacao(mySqlConnection);
 
 dadosPessoais.instance.hasOne(cadastro.instance, {
   constraint: true,
@@ -60,21 +60,21 @@ cadastro.instance.belongsTo(consultorio.instance, {
   as: "consultorio",
 });
 
-enderecos.instance.hasOne(consultorio.instance, {
+situacao.instance.hasOne(cadastro.instance, {
   constraint: true,
-  foreignKey: "endereco_id"
+  foreignKey: "situacao_id"
 });
-consultorio.instance.belongsTo(enderecos.instance, {
+cadastro.instance.belongsTo(situacao.instance, {
   constraint: true,
-  foreignKey: "endereco_id"
+  foreignKey: "situacao_id"
 });
 
 export {
   dadosPessoais,
   dadosProfissionais,
-  enderecos,
   servicos,
   consultorio,
   cadastro,
   listaEspera,
+  situacao,
 };

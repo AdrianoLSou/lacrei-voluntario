@@ -2,23 +2,19 @@ import { QueryInterface, DataTypes } from "sequelize";
 
 export default {
   up: (queryInterface: QueryInterface) => {
-    return queryInterface.createTable("dados_profissionais", {
+    return queryInterface.createTable("situacao", {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
-      especialidade: {
-        type: DataTypes.STRING(255),
-        allowNull: true,
-      },
-      carta: {
+      chave: {
         type: DataTypes.STRING(300),
         allowNull: true,
       },
-      foto: {
-        type: DataTypes.STRING(255),
-        allowNull: true,
+      situacao: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
       },
       createdAt: {
         type: DataTypes.DATE(),
@@ -29,6 +25,6 @@ export default {
     });
   },
   down: (queryInterface: QueryInterface) => {
-    return queryInterface.dropTable("dados_profissionais");
+    return queryInterface.dropTable("situacao");
   },
 };

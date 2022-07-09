@@ -1,9 +1,9 @@
 import { DataTypes } from "sequelize";
 import Connection from "../database/Connection";
 
-export class Enderecos {
+export class Situacao {
   instance: any;
-  modelName: string = "Enderecos";
+  modelName: string = "Situacao";
 
   constructor(conexao: Connection) {
     const con = conexao.getInstance();
@@ -16,20 +16,12 @@ export class Enderecos {
           primaryKey: true,
           autoIncrement: true,
         },
-        rua: {
-          type: DataTypes.STRING(255),
-          allowNull: false,
-        },
-        numero: {
-          type: DataTypes.STRING(50),
-          allowNull: false,
-        },
-        bairro: {
-          type: DataTypes.STRING(50),
+        chave: {
+          type: DataTypes.STRING(300),
           allowNull: true,
         },
-        cidade: {
-          type: DataTypes.STRING(255),
+        situacao: {
+          type: DataTypes.INTEGER,
           allowNull: false,
         },
         createdAt: {
@@ -40,7 +32,7 @@ export class Enderecos {
         },
       },
       {
-        tableName: "enderecos",
+        tableName: "situacao",
       }
     );
   }

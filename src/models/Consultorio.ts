@@ -16,10 +16,21 @@ export class Consultorio {
           primaryKey: true,
           autoIncrement: true,
         },
-        endereco_id: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-          references: { model: "enderecos", key: "id" }
+        rua: {
+          type: DataTypes.STRING(255),
+          allowNull: true,
+        },
+        numero: {
+          type: DataTypes.STRING(50),
+          allowNull: true,
+        },
+        bairro: {
+          type: DataTypes.STRING(50),
+          allowNull: true,
+        },
+        cidade: {
+          type: DataTypes.STRING(255),
+          allowNull: true,
         },
         celular: {
           type: DataTypes.STRING(255),
@@ -35,19 +46,19 @@ export class Consultorio {
         },
         tipoConsulta: {
           type: DataTypes.STRING(255),
-          allowNull: false,
+          allowNull: true,
         },
         acessibilidade: {
           type: DataTypes.STRING(255),
-          allowNull: false,
+          allowNull: true,
         },
         horarioFuncionamento: {
           type: DataTypes.STRING(255),
-          allowNull: false,
+          allowNull: true,
         },
         convenios: {
           type: DataTypes.STRING(300),
-          allowNull: false,
+          allowNull: true,
         },
         createdAt: {
           type: DataTypes.DATE(),

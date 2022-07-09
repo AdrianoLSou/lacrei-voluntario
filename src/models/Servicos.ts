@@ -18,11 +18,11 @@ export class Servicos {
         },
         nome: {
           type: DataTypes.STRING(255),
-          allowNull: false,
+          allowNull: true,
         },
         duracao: {
           type: DataTypes.INTEGER,
-          allowNull: false,
+          allowNull: true,
         },
         valor: {
           type: DataTypes.DOUBLE,
@@ -30,7 +30,7 @@ export class Servicos {
         },
         tipoConsulta: {
           type: DataTypes.STRING(255),
-          allowNull: false,
+          allowNull: true,
         },
         createdAt: {
           type: DataTypes.DATE(),

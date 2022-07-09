@@ -62,6 +62,10 @@ export class Cadastro {
           allowNull: true,
           references: { model: "servicos", key: "id" },
         },
+        situacao_id: {
+          type: DataTypes.INTEGER,
+          allowNull: true,
+        },
         createdAt: {
           type: DataTypes.DATE(),
         },

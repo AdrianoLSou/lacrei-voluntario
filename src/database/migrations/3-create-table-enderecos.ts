@@ -10,11 +10,11 @@ export default {
       },
       rua: {
         type: DataTypes.STRING(255),
-        allowNull: false,
+        allowNull: true,
       },
       numero: {
         type: DataTypes.STRING(50),
-        allowNull: false,
+        allowNull: true,
       },
       bairro: {
         type: DataTypes.STRING(50),
@@ -22,7 +22,7 @@ export default {
       },
       cidade: {
         type: DataTypes.STRING(255),
-        allowNull: false,
+        allowNull: true,
       },
       createdAt: {
         type: DataTypes.DATE(),

@@ -22,6 +22,7 @@ export default class App {
     this.instance.use(cors());
     this.instance.use(Express.json());
     this.instance.use('/api-docs', Express.static('src/docs'));
+    this.instance.use('/images', Express.static('images'))
     this.instance.use(BaseRoutes);
     this.instance.use(handleError);
 

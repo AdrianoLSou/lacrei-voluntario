@@ -47,12 +47,12 @@ export default {
         onDelete: 'cascade',
         onUpdate: 'cascade'
       }),
-      queryInterface.addConstraint('consultorio', {
-        fields: ['endereco_id'],
+      queryInterface.addConstraint('cadastro', {
+        fields: ['situacao_id'],
         type: 'foreign key',
-        name: 'FK_endereco',
+        name: 'FK_situacao',
         references: {
-          table: 'enderecos',
+          table: 'situacao',
           field: 'id'
         },
         onDelete: 'cascade',
@@ -66,7 +66,7 @@ export default {
       queryInterface.removeConstraint('cadastro', 'FK_dados_profissionais'),
       queryInterface.removeConstraint('cadastro', 'FK_consultorio'),
       queryInterface.removeConstraint('cadastro', 'FK_servicos'),
-      queryInterface.removeConstraint('consultorio', 'FK_endereco'),
+      queryInterface.removeConstraint('cadastro', 'FK_situacao'),
     ]);
   },
 };
