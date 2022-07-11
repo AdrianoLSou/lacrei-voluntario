@@ -21,8 +21,8 @@ export default class App {
     const selectedPort = options.port ? options.port : this.defaultPort;
     this.instance.use(cors());
     this.instance.use(Express.json());
-    this.instance.use('/api-docs', Express.static('src/docs'));
-    this.instance.use('/images', Express.static('images'))
+    this.instance.use('/api-docs', Express.static('public/docs'));
+    this.instance.use('/images', Express.static('public/images'))
     this.instance.use(BaseRoutes);
     this.instance.use(handleError);
 
