@@ -1,16 +1,9 @@
 import mailer from "nodemailer";
 import ENV from "../infra/config/env";
+import smtpConfig from "../infra/config/mail";
 
 export const mailService = (email: string, nome: string, mensagem: string) => {
-  const smtp = mailer.createTransport({
-    host: "smtp-mail.outlook.com",
-    port: 587,
-    secure: false,
-    auth: {
-      user: ENV.MAIL_USER,
-      pass: ENV.MAIL_PASS,
-    }
-  });
+  const smtp = mailer.createTransport(smtpConfig);
 
   const mail = {
     from: ENV.MAIL_USER,
